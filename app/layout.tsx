@@ -1,7 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Bagel_Fat_One, Fredoka } from 'next/font/google'
-import { PasswordGate } from '@/components/password-gate'
 import './globals.css'
 
 const bagelFatOne = Bagel_Fat_One({
@@ -39,7 +38,7 @@ export default function RootLayout({
       <body
         className={`${bagelFatOne.variable} ${fredoka.variable} font-sans antialiased`}
       >
-        <PasswordGate>{children}</PasswordGate>
+        {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
